@@ -13,7 +13,7 @@ $(document).ready(function(){
       var url =  form.find(".main-input");
     }
     if(!url.val()){
-	  Snackbar.show({text: lang.error,backgroundColor: '#e22e40',textColor: '#fff',showAction: false}); 
+	  Snackbar.show({text: "Error",backgroundColor: '#e22e40',textColor: '#fff',showAction: false}); 
       $('.main-input').addClass('error');
       return;
     }
@@ -45,13 +45,13 @@ $(document).ready(function(){
             $("#copyurl").show();   **/            
             
             var short = html.short.split("#");
-			Snackbar.show({text: lang.success,backgroundColor: '#1aa82c',textColor: '#fff',showAction: false});
-            $('.modal-contentlink').html('<div class="panel-body"><div class="copy-link-block"><span class="short-url">'+short[0]+'</span><button class="btn btn-primary" id="copyurlmodal" type="button"><i class="zmdi zmdi-copy"></i></button></div><div class="qr"><img src="'+short[0]+'/qr" alt=""><a href="'+html.short+'/qr" target="_blank" class="mdbtn btn btn-primary copy" data-value="'+html.short+'/qr">'+lang.qr+'</a></div><hr><p>'+lang.stats+': <a href="'+short[0]+'+" target="_blank" style="color: #2196F3;border-bottom: 1px solid #2196F3;"> '+short[0]+'+ </a></p><div class="share-message"><p>'+lang.share+'</p><div class="share"><a href="http://www.facebook.com/sharer.php?u='+html.short+'" target="_blank" class="btn btn-facebook u_share" title="Facebook"><i class="zmdi zmdi-facebook"></i></a><a href="https://twitter.com/share?url='+html.short+'" target="_blank" class="btn btn-twitter u_share" title="Twitter"><i class="zmdi zmdi-twitter"></i></a><a href="https://plus.google.com/share?url='+html.short+'" target="_blank" class="btn btn-danger u_share" title="Google Plus"><i class="zmdi zmdi-google-plus"></i></a><a href="https://www.linkedin.com/shareArticle?mini=true&url='+html.short+'" target="_blank" class="btn btn-linkedin u_share" title="LinkedIn"><i class="zmdi zmdi-linkedin"></i></a><a href="https://pinterest.com/pin/create/button/?url='+html.short+'" target="_blank" class="btn btn-pinterest u_share" title="Pinterest"><i class="zmdi zmdi-pinterest"></i></a></div></div></div>');
+			Snackbar.show({text: "Sukses",backgroundColor: '#1aa82c',textColor: '#fff',showAction: false});
+            $('.modal-contentlink').html('<div class="panel-body"><div class="copy-link-block"><span class="short-url">'+short[0]+'</span><button class="btn btn-primary" id="copyurlmodal" type="button"><i class="zmdi zmdi-copy"></i></button></div><div class="qr"><img src="http://chart.apis.google.com/chart?cht=qr&chs=200x200&chl='+short[0]+'&chld=H|0" alt="qr"><a href="'+html.short+'/qr" target="_blank" class="mdbtn btn btn-primary copy" data-value="'+html.short+'/qr">QR Code</a></div><hr><div class="share-message"><p>Share :</p><div class="share"><a href="http://www.facebook.com/sharer.php?u='+html.short+'" target="_blank" class="btn btn-facebook u_share" title="Facebook"><i class="zmdi zmdi-facebook"></i></a><a href="https://twitter.com/share?url='+html.short+'" target="_blank" class="btn btn-twitter u_share" title="Twitter"><i class="zmdi zmdi-twitter"></i></a><a href="https://plus.google.com/share?url='+html.short+'" target="_blank" class="btn btn-danger u_share" title="Google Plus"><i class="zmdi zmdi-google-plus"></i></a><a href="https://www.linkedin.com/shareArticle?mini=true&url='+html.short+'" target="_blank" class="btn btn-linkedin u_share" title="LinkedIn"><i class="zmdi zmdi-linkedin"></i></a><a href="https://pinterest.com/pin/create/button/?url='+html.short+'" target="_blank" class="btn btn-pinterest u_share" title="Pinterest"><i class="zmdi zmdi-pinterest"></i></a></div></div></div>');
 			$('.overlaylink').fadeIn();
              zClipload();
           }else{
             $('.share-this').slideUp();
-			Snackbar.show({text: lang.success,backgroundColor: '#1aa82c',textColor: '#fff',showAction: false});			
+			Snackbar.show({text: "Sukses",backgroundColor: '#1aa82c',textColor: '#fff',showAction: false});			
           }           
           $('.main-advanced').find('input').val('');
 		  $('.main-input').val('');
@@ -66,13 +66,13 @@ $(document).ready(function(){
           $("#copyurl").attr("data-clipboard-text", html.short).show();
 		  $("#copyurlmodal").attr("data-clipboard-text", html.short).show();
           copy.on('success', function(e) {  
-			Snackbar.show({text: lang.copy});
+			Snackbar.show({text: "Copy"});
             $("#copyurl").hide();
             $("#shortenurl").show();
             $('input.main-input').val('');
           });
 		  copymodal.on('success', function(e) {  
-			Snackbar.show({text: lang.copy});
+			Snackbar.show({text: "Copy"});
           });		  
         } 
           
